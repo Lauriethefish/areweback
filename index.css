@@ -8,7 +8,7 @@ p {
 }
 
 progress {
-    width: auto;
+    width: 100%;
 }
 
 body {
