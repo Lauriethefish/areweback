@@ -1,0 +1,32 @@
+h1 {
+    color: white;
+    font-size: 50pt;
+}
+
+p {
+    color: gray;
+}
+
+progress {
+    width: auto;
+}
+
+body {
+    background-color: black;
+    font-family: helvetica;
+}
+
+.hidden {
+    display: none;
+}
+
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.red {
+    color: red;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>are we back yet?</title>
+        <link rel="stylesheet" href="index.css" />
+    </head>
+
+    <body>
+        <div class="body">
+            <h1 id="message"></h1>
+
+            <div id="progContainer" class="hidden">
+                <br><br><br>
+                <p id="progText"></p>
+                <progress max="100" id="prog"></progress>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        let dateWhenLeft = new Date(2024, 11, 8);
+        let dateWhenBack = new Date(2025, 0, 18);
+        let dateWhenGoneAgain = new Date(2025, 2, 24);
+
+        let date = new Date();
+        let msg;
+        if(!([2024, 2025].includes(date.getFullYear()))) {
+            msg = "unsure if back";
+        }
+
+        if(date < dateWhenBack) {
+            msg = "we are <span class=\"red\">NOT</span> back";
+
+            let percentageBack = (date - dateWhenLeft) / (dateWhenBack - dateWhenLeft);
+            let progress = document.getElementById("prog");
+            let container = document.getElementById("progContainer");
+            let progText = document.getElementById("progText");
+
+            progress.value = percentageBack * 100.0;
+            progText.innerHTML = "(progress: " + (percentageBack * 100.0).toPrecision(3) + "% back)";
+            container.className = "";
+        }   else if(date > dateWhenGoneAgain)   {
+            msg = "we are SO gone";
+        }   else    {
+            msg = "we are SO back";
+        }
+
+        document.getElementById("message").innerHTML = msg;
+    </script>
+</html>
