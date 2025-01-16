@@ -20,6 +20,7 @@
     <script>
         let dateWhenLeft = new Date(2024, 11, 8);
         let dateWhenBack = new Date(2025, 0, 18);
+        dateWhenBack.setHours(10, 0, 0);
         let dateWhenGoneAgain = new Date(2025, 2, 24);
 
         let date = new Date();
@@ -29,7 +30,7 @@
         }
 
         if(date < dateWhenBack) {
-            msg = "we are <span class=\"red\">NOT</span> back";
+            msg = "we are <span class=\"nearly\">very nearly</span> back";
 
             let percentageBack = (date - dateWhenLeft) / (dateWhenBack - dateWhenLeft);
             let progress = document.getElementById("prog");
