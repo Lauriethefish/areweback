@@ -18,10 +18,9 @@
     </body>
 
     <script>
-        let dateWhenLeft = new Date(2025, 3, 22);
-        let dateWhenBack = new Date(2025, 4, 20);
+        let dateWhenLeft = new Date(2025, 2, 22);
+        let dateWhenBack = new Date(2025, 3, 20);
         dateWhenBack.setHours(10, 0, 0);
-        let dateWhenGoneAgain = new Date(2025, 2, 24);
 
         let date = new Date();
         let msg;
@@ -30,7 +29,7 @@
         }
 
         if(date < dateWhenBack) {
-            msg = "we are <span class=\"nearly\">very nearly</span> back";
+            msg = "we are <span class=\"red\">NOT</span> back";
 
             let percentageBack = (date - dateWhenLeft) / (dateWhenBack - dateWhenLeft);
             let progress = document.getElementById("prog");
@@ -40,9 +39,7 @@
             progress.value = percentageBack * 100.0;
             progText.innerHTML = "(progress: " + (percentageBack * 100.0).toPrecision(3) + "% back)";
             container.className = "";
-        }   else if(date > dateWhenGoneAgain)   {
-            msg = "we are SO gone";
-        }   else    {
+        }  else    {
             msg = "we are SO back";
         }
 
